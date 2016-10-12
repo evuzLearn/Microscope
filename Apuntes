@@ -1,0 +1,27 @@
+* Crear proyecto:
+# meteor create <nombreProyecto>
+
+* Inicar proyecto:
+# meteor
+
+* Añadir paquete
+- Oficial
+# meteor add <paquete>
+- Dev externo
+# meteor add <repositorio>:<paquete>
+Los paquetes NPM no se pueden usar por defecto con meteor,
+pero pueden ser usados por paquetes externos.
+
+* Reglas de ejecución
+El código de la carpeta /server se ejecuta sólo en el servidor
+El código de la carpeta /cliente se ejecuta sólo en el cliente
+El código de las otras carpetas se ejecutan en ambas partes
+
+* Orden de carga ficheros
+1º /lib
+2º main.*
+3º orden alfabético
+
+
+
+
