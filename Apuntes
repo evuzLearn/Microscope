@@ -34,7 +34,33 @@ El código de las otras carpetas se ejecutan en ambas partes
 * Definimos la función para el ayudante de la plantilla
 Template.templateName.helpers()
 
+[Lección 2.5]
+* Habla sobre Git, interesante leerla.
 
+[Lección 3]
+* Crear colección de datos
+En la carpeta lib/collections añadimos un fichero JS
+collectionName = new Mongo.Collection('collection_name');
 
+* Para agregar datos al iniciar el servidor en la carpeta server
+se agregan los insert de esta forma.
+if (collectionName.find().count() === 0) {
+    collectionName.insert({
+        dato1: "",
+        dato2: 00
+    });
+}
 
+* Para hacer visibles estos datos en el navegador,
+cargamos la colección en nuestro ayudante de plantilla
+return collectionName.find();
 
+* Para evitar la transferenica de todos los Posts al navegador
+eliminamos autopublish y tenemos que crear nuestras publicaciones
+manualmente y sus respectivas suscripciones.
+- Publicación (/server/:
+Meteor.publish('collection_name', function() {
+    return collectionName.find();
+});
+- Suscripción (/client/*.js:
+Meteor.subscribe('collection_name');
