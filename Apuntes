@@ -64,3 +64,17 @@ Meteor.publish('collection_name', function() {
 });
 - Suscripción (/client/*.js:
 Meteor.subscribe('collection_name');
+
+[Lección 4]
+* Para realizar el enrutado de URL usamos el
+paquete "Iron Router"
+meteor add iron:router
+
+* Para el enrutado se usa el ayudante {{> yield}}, llevamos el
+body del html a un fichero por separado aplicandolo
+como un template (layout.html).
+Creamos un fichero para enrutar (router.js)
+Router.configure({
+    layoutTemplate: 'layout'
+});
+Router.route('/', {name: 'postsList'});
