@@ -78,3 +78,17 @@ Router.configure({
     layoutTemplate: 'layout'
 });
 Router.route('/', {name: 'postsList'});
+
+* Rutas con nombre, tengo que volver a mirarlo, no lo entiendo.
+
+* Con Iron Router se puede mostrar una pantalla diferentes mientras
+se está cargando la colección, se añade la suscripción al router
+con el parámetro waitOn y con el parámetro loudingTemplate, indicas
+el template que vas a lanzar mientras no está lista la suscripción
+Router.configure({
+    layoutTemplate: 'layout',
+    loadingTemplate: 'loading',
+    waitOn: function () {
+        return Meteor.subscribe('posts');
+    }
+});
