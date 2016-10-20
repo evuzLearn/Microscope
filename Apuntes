@@ -95,3 +95,11 @@ Router.configure({
         return Meteor.subscribe('posts');
     }
 });
+
+* Para añadir una plantilla cuando tengamos una ruta no válida,
+utilizamos este parámetro en Iron Router
+notFoundTemplate: 'notFound'
+
+* Si la ruta es válida pero no tiene ningún objeto, se soluciona
+así:
+Router.onBeforeAction('dataNotFound', {only: 'postPage'});
