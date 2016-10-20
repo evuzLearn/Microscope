@@ -79,7 +79,10 @@ Router.configure({
 });
 Router.route('/', {name: 'postsList'});
 
-* Rutas con nombre, tengo que volver a mirarlo, no lo entiendo.
+* Rutas con nombre, cuando defines en route un nombre para la ruta,
+este se asocia directamente a una plantilla con el mismo nombre.
+Además este nombre se puede usar en otras situaciones, como en la
+plantilla layout haciendo uso del {{pathFor}}
 
 * Con Iron Router se puede mostrar una pantalla diferentes mientras
 se está cargando la colección, se añade la suscripción al router
