@@ -113,3 +113,22 @@ la version de stylus y poner 2.512.5.
 
 * De esta forma ya está listo, se crea una colección llamada users en la DB
  y el control de los usuarios ya queda funcionando.
+
+[Lección 6]
+* Añadir post, es intuitivo. sólo usar Post.insert(data);
+
+* Para añadir seguridad, que no todos los usuarios puedan crear post, meteor lo
+gestiona solo, pero hay que eliminar el paquete insecure. De esta forma nadie podrá
+añadir un post. Para dejar que añadan post, hay que configurar los permisos.
+Se usa el método Post.allow, no sé que significa "return !! userID"
+
+* Vamos a denegar el acceso al formulario a quien no esté registrado.
+Router.onBeforeAction(requireLogin, {only: 'postSubmit'});
+Con esta línea hacemos que antes de que el router acceda a postSubmit, procese
+el método requireLogin.
+
+* Añado el algoritmo para que muestre la ventana de carga, pero ya lo hacía sin él.
+
+* Podemos usar en html currentUser, que es el equivalente a Metero.user();
+{{#if currentUser}}<li><a href="{{pathFor 'postSubmit'}}">Submit Post</a></li>{{/if}}
+De esta forma ocultamos el botón al no estar registrados
