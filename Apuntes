@@ -103,3 +103,13 @@ notFoundTemplate: 'notFound'
 * Si la ruta es válida pero no tiene ningún objeto, se soluciona
 así:
 Router.onBeforeAction('dataNotFound', {only: 'postPage'});
+
+[Lección 5]
+* En meteor es muy fácil agregar usuarios, podemos usar el paquete
+accounts-ui y accounts-passwords. En este proyecto usaremos
+accounts-ui-bootstrap-3, que modifica el estilo.
+Para añadir accounts-ui-bootstrap-3 hay que modificar en .meteor/version
+la version de stylus y poner 2.512.5.
+
+* De esta forma ya está listo, se crea una colección llamada users en la DB
+ y el control de los usuarios ya queda funcionando.
