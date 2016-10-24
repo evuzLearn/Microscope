@@ -22,4 +22,13 @@ Router.route('/posts/:_id', {
     }
 });
 
+var requireLogin = function() {
+    if (!Meteor.user()) {
+        this.render('accessDenied');
+    } else {
+        this.next();
+    }
+};
+
 Router.onBeforeAction('dataNotFound', {only: 'postPage'});
+Router.onBeforeAction(requireLogin, {only: 'postSubmit'});
