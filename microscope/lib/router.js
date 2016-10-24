@@ -11,6 +11,10 @@ Router.route('/', {
     name: 'postsList'
 });
 
+Router.route('/submit', {
+    name: 'postSubmit'
+});
+
 Router.route('/posts/:_id', {
     name: 'postPage',
     data: function() {
