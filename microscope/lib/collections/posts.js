@@ -5,6 +5,13 @@ Posts.allow({
     remove: function(userId, post) { return ownsDocument(userId, post); },
 });
 
+Posts.deny({
+    update: function(userId, post, fieldNames) {
+        // may only edit the following two fields:
+        return (_.without(fieldNames, 'url', 'title').length > 0);
+    }
+});
+
 Meteor.methods({
     postInsert: function(postAttributes) {
         check(Meteor.userId(), String);
@@ -31,5 +38,12 @@ Meteor.methods({
         return {
             _id: postId
         };
+    },
+    postEdit: function (postProperties) {
+        check(Meteor.userId(), String);
+        check(postAttributes, {
+            title: String,
+            url: String
+        });
     }
 });
