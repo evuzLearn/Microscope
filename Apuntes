@@ -132,3 +132,11 @@ el método requireLogin.
 * Podemos usar en html currentUser, que es el equivalente a Metero.user();
 {{#if currentUser}}<li><a href="{{pathFor 'postSubmit'}}">Submit Post</a></li>{{/if}}
 De esta forma ocultamos el botón al no estar registrados
+
+* Para evitar problemas y quebraderos de cabeza, todos los añadidos al post se hacen en
+el servidor. Llamaremos a los métodos desde el cliente y se ejecutaran en el servidor.
+
+* Para ejecutar código antes de una operación en la DB ver el paquete collection-hooks
+
+* El operador sort, espera un objeto con las clave de ordenación y un signo indicando
+ascendente o descendente
