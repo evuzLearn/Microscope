@@ -39,5 +39,15 @@ var requireLogin = function() {
     }
 };
 
+var requireOwnPost = function () {
+    var ownerPost = Posts.findOne(this.params._id).userId;
+    if (ownerPost === Meteor.userId()) {
+        this.next();
+    } else {
+        this.render('accessDenied');
+    }
+};
+
 Router.onBeforeAction('dataNotFound', {only: 'postPage'});
 Router.onBeforeAction(requireLogin, {only: 'postSubmit'});
+Router.onBeforeAction(requireOwnPost, {only: 'postEdit'});
