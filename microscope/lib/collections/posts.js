@@ -38,12 +38,5 @@ Meteor.methods({
         return {
             _id: postId
         };
-    },
-    postEdit: function (postProperties) {
-        check(Meteor.userId(), String);
-        check(postAttributes, {
-            title: String,
-            url: String
-        });
     }
 });

@@ -50,4 +50,4 @@ var requireOwnPost = function () {
 
 Router.onBeforeAction('dataNotFound', {only: 'postPage'});
 Router.onBeforeAction(requireLogin, {only: 'postSubmit'});
-Router.onBeforeAction(requireOwnPost, {only: 'postEdit'});
+//Router.onBeforeAction(requireOwnPost, {only: 'postEdit'});
