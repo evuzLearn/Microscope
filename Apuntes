@@ -140,3 +140,16 @@ el servidor. Llamaremos a los métodos desde el cliente y se ejecutaran en el se
 
 * El operador sort, espera un objeto con las clave de ordenación y un signo indicando
 ascendente o descendente
+
+[Lección 7]
+* Editar y borrar post, realmente aquí se aplican los conocimientos ya aprendidos.
+No hay grandes aportaciones
+
+[Lección 8]
+* Para gestionar los errores, crearemos un colleción solo disponible en el cliente.
+y el nomre de la colección en null, ya que nunca se almacenarán en la DB
+Errors = new Mongo.Collection(null);
+Al ser una colección local no tenemos que preocuparnos por agregar allow o deny
+
+* Para hacer uso de Session en versiones nuevas de meteor hay que agregar el paquete
+meteor add session
